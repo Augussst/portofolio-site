@@ -21,7 +21,7 @@
 		<h2 class="capitalize windowname">
 			<slot name="name">No name</slot>
 		</h2>
-		<div class="icon ml-5">
+		<div class="ml-5">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 20 20"
