@@ -1,8 +1,12 @@
 <script>
 	import { fly, slide } from 'svelte/transition';
 	import { quintInOut } from 'svelte/easing';
+	import Header from './Header.svelte';
 
-	let menuMargin = 100;
+	/**
+	 * @type {number}
+	 */
+	let menuMargin;
 
 	function ToggleNav() {
 		if (menuMargin == 100) {

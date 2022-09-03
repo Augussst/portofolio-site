@@ -3,7 +3,7 @@
 	import { fly, slide, fade } from 'svelte/transition';
 	import { quintInOut } from 'svelte/easing';
 
-	let menuMargin = 100;
+	export let menuMargin = 100;
 
 	function ToggleNav() {
 		if (menuMargin == 100) {
@@ -35,7 +35,7 @@
 		okreate
 	</h1>
 	<div class="menus inline-flex z-10 h-full">
-		<a href="#contact">Contact</a>
+		<a on:click={ToggleNav} href="#contact">Contact</a>
 	</div>
 </header>
 

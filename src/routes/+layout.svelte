@@ -3,7 +3,7 @@
 	import Header from '../components/Header.svelte';
 	import Logo from '../components/Logo.svelte';
 	import Window from '../components/Window.svelte';
-	import VideoPlayer from '../components/VideoPlayer.svelte';
+	import Work from '../components/Work.svelte';
 	import Table from '../components/Table.svelte';
 </script>
 
@@ -30,18 +30,7 @@
 	</p>
 </Window>
 
-<div id="work" class="grid scroll-mt-14 [&>.window:last-child]:my-0 [&>.window:first-child]:my-0">
-	<Window>
-		<span id="project" slot="name">project</span>
-	</Window>
-	<Window>
-		<span slot="name">work</span>
-		<VideoPlayer />
-	</Window>
-	<Window>
-		<span id="work-desc" slot="name">description</span>
-	</Window>
-</div>
+<Work />
 
 <Window>
 	<span id="other-work" slot="name">other work</span>
