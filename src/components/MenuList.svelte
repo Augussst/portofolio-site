@@ -2,22 +2,9 @@
 	import { fly, slide } from 'svelte/transition';
 	import { quintInOut } from 'svelte/easing';
 	import Header from './Header.svelte';
-
-	/**
-	 * @type {number}
-	 */
-	let menuMargin;
-
-	function ToggleNav() {
-		if (menuMargin == 100) {
-			menuMargin = 0;
-		} else {
-			menuMargin = 100;
-		}
-	}
 </script>
 
-<a on:click={ToggleNav} href="#home"
+<a on:click href="#home"
 	><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-7 h-7">
 		<path
 			fill-rule="evenodd"
@@ -26,6 +13,6 @@
 		/>
 	</svg>
 </a>
-<a on:click={ToggleNav} href="#about">About</a>
-<a on:click={ToggleNav} href="#work">Work</a>
-<a on:click={ToggleNav} href="#social">Social</a>
+<a on:click href="#about">About</a>
+<a on:click href="#work">Work</a>
+<a on:click href="#social">Social</a>

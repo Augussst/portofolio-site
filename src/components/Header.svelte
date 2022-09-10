@@ -3,7 +3,7 @@
 	import { fly, slide, fade } from 'svelte/transition';
 	import { quintInOut } from 'svelte/easing';
 
-	export let menuMargin = 100;
+	let menuMargin = 100;
 
 	function ToggleNav() {
 		if (menuMargin == 100) {
@@ -49,7 +49,7 @@
 			transition:slide={{ duration: 500, easing: quintInOut }}
 			class="sm-menus text-xl flex gap-2 flex-col h-screen text-gray bg-containerbg py-5 w-60"
 		>
-			<MenuList />
+			<MenuList on:click={ToggleNav} />
 		</div>
 		<div
 			in:fly={{ delay: 350, duration: 500 }}
