@@ -41,18 +41,18 @@
 <Window>
 	<span id="social" slot="name">social</span>
 	<div class="flex justify-around">
-		<div class="social px-10 py-5 lg:px-16 lg:py-10">
-			<i class="fa-brands fa-instagram" />
+		<div class="social px-5 py-5 lg:px-16 lg:py-10">
+			<i class="fa-brands text-5xl lg:text-8xl fa-instagram" />
 			<a class="btn capitalize" href="https://www.instagram.com/oka.augusta" target="_blank"
 				>instagram</a
 			>
 		</div>
-		<div class="social px-10 py-5 lg:px-16 lg:py-10">
-			<i class="fa-brands fa-behance" />
+		<div class="social px-5 py-5 lg:px-16 lg:py-10">
+			<i class="fa-brands text-5xl lg:text-8xl fa-behance" />
 			<a class="btn capitalize" href="https://www.behance.net/" target="_blank">Behance</a>
 		</div>
-		<div class="social px-10 py-5 lg:px-16 lg:py-10">
-			<i class="fa-brands fa-linkedin-in" />
+		<div class="social px-5 py-5 lg:px-16 lg:py-10">
+			<i class="fa-brands text-5xl lg:text-8xl fa-linkedin-in" />
 			<a class="btn capitalize" href="https://www.linkedin.com/in/okaaugust/" target="_blank"
 				>Linkedin</a
 			>
@@ -107,7 +107,6 @@
 
 	.fa-brands {
 		color: var(--white);
-		font-size: 70px;
 		margin-bottom: 34px;
 	}
 </style>
