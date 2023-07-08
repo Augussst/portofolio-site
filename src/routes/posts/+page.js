@@ -1,15 +1,14 @@
-// const modules = Object.entries(import.meta.glob('../../posts/blog/*.md'));
-// console.log(modules);
+import { error } from '@sveltejs/kit';
 
-// const getRoutes = () => {
-// 	return modules.map(([file, module]) => {
-// 		const path = file.replace('./routes/', '/').replace('index', '').replace('.md', '');
+export async function load() {
+	try {
+		const post = await import('$content/blog/2023-07-08-test1.md');
 
-// 		return {
-// 			path,
-// 			...module.metadata
-// 		};
-// 	});
-// };
-
-// export { getRoutes };
+		return {
+			content: post.default,
+			meta: post.metadata
+		};
+	} catch (e) {
+		throw error(404, `Could not show post`);
+	}
+}

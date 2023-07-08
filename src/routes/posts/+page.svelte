@@ -1,14 +1,8 @@
 <script>
-	import { getRoutes } from '../../metadata';
-
-	const routes = getRoutes();
-	console.log(routes);
+	export let data;
+	$: ({ content, meta } = data);
 </script>
 
-<ul>
-	{#each routes as route}
-		<li>
-			<a href={route.path}>{route.title}</a>
-		</li>
-	{/each}
-</ul>
+<h1>{meta.title}</h1>
+
+<svelte:component this={content} />
