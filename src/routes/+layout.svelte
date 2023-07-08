@@ -6,6 +6,10 @@
 	// Finally, your application's global stylesheet (sometimes labeled 'app.css')
 	import '../app.postcss';
 	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
+
+	// Site setting
+	import * as sites from '$content/settings.md';
+	const site = sites.metadata;
 </script>
 
 <!-- App Shell -->
@@ -14,7 +18,7 @@
 		<!-- App Bar -->
 		<AppBar>
 			<svelte:fragment slot="lead">
-				<strong class="text-xl uppercase">Skeleton</strong>
+				<strong class="text-xl uppercase">{site.siteName}</strong>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<a
