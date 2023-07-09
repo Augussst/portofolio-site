@@ -1,7 +1,5 @@
 <section class="relative flex flex-col py-5 px-2 text-center gap-5">
-	<h1 class="h1">
-		Hello,<br /> I'm a
-	</h1>
+	<h1 class="h1">Hello, I'm a</h1>
 	<div class="grid grid-cols-3">
 		<div class="flex items-center justify-center text-center h1">Web developer</div>
 		<div class="flex items-center justify-center text-center h1">&</div>

@@ -1,5 +1,17 @@
 /*place global styles here */
 html,
 body {
-	@apply h-full overflow-hidden;
+	@apply h-full overflow-hidden bg-default;
+}
+
+.bg-default {
+	@apply bg-primary-500 dark:bg-secondary-500;
+}
+
+.bg-default-hover {
+	@apply hover:bg-secondary-500 hover:dark:bg-primary-500;
+}
+
+.text-default-hover {
+	@apply hover:text-primary-500 hover:dark:text-secondary-500;
 }
