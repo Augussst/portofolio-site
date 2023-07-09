@@ -4,8 +4,19 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="robots" content="noindex" />
-		<link rel="icon" href="../favicon.png" />
-		<title>Content Manager</title>
+		<link rel="icon" href="../images/uploads/logo.svg" />
+		<title>okreate: Content Manager</title>
+		<script>
+			if (window.netlifyIdentity) {
+				window.netlifyIdentity.on('init', (user) => {
+					if (!user) {
+						window.netlifyIdentity.on('login', () => {
+							document.location.href = '/admin/';
+						});
+					}
+				});
+			}
+		</script>
 	</head>
 	<body>
 		<!-- Include the script that builds the page and powers Decap CMS -->

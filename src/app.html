@@ -5,10 +5,6 @@
 		<link rel="icon" href="%sveltekit.assets%/images/uploads/logo.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-		%sveltekit.head%
-	</head>
-	<body data-sveltekit-preload-data="hover" data-theme="skeleton">
-		<div style="display: contents" class="h-full overflow-hidden">%sveltekit.body%</div>
 		<script>
 			if (window.netlifyIdentity) {
 				window.netlifyIdentity.on('init', (user) => {
@@ -20,5 +16,9 @@
 				});
 			}
 		</script>
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover" data-theme="skeleton">
+		<div style="display: contents" class="h-full overflow-hidden">%sveltekit.body%</div>
 	</body>
 </html>
