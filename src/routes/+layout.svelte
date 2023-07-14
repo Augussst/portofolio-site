@@ -21,10 +21,10 @@
 
 <!-- App Shell -->
 
-<AppShell slotPageContent="container mx-auto">
-	<svelte:fragment slot="pageHeader"><Header /></svelte:fragment>
+<AppShell>
+	<!-- <svelte:fragment slot="pageHeader"><Header /></svelte:fragment> -->
 	<!-- Router Slot -->
 	<slot />
 	<!-- ---- / ---- -->
-	<svelte:fragment slot="pageFooter">Page Footer</svelte:fragment>
+	<!-- <svelte:fragment slot="pageFooter">Page Footer</svelte:fragment> -->
 </AppShell>
