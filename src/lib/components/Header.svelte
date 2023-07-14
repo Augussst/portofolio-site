@@ -23,7 +23,7 @@
 			<li
 				class="flex text-xl px-1 h-full items-center transform transition duration-250 bg-default-hover text-default-hover"
 			>
-				<a href="#okreate">okreate</a>
+				<a href="#projects">projects</a>
 			</li>
 			<li
 				class="flex text-xl px-1 h-full items-center transform transition duration-250 bg-default-hover text-default-hover"
