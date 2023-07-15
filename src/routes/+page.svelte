@@ -1,74 +1,150 @@
 <script>
-	let x;
-	let y;
-	let sh;
-	let sw;
-	let deg;
-	let centerXCoordinate;
-	let centerYCoordinate;
+	let deg = 0;
 	let mouseEnter = false;
-
-	function handleMousemove(event) {
-		x = event.clientX;
-		y = event.clientY;
-
-		centerXCoordinate = sw / 2;
-		centerYCoordinate = sh / 2;
-		const deltaX = centerXCoordinate - x;
-		const deltaY = centerYCoordinate - y;
-		const rad = Math.atan2(-deltaY, -deltaX);
-		deg = Math.round(rad * (180 / Math.PI));
-		if (deg < 0) {
-			deg = (deg + 360) % 360;
-		}
-	}
+	setTimeout(() => {
+		mouseEnter = true;
+	}, 500);
 
 	function revealAnimation(mouseEnter) {
 		return `${mouseEnter ? 'w-[1500px] h-[1500px]' : 'w-0 h-0'}`;
 	}
+
+	function closestEquivalentAngle(from, to) {
+		var delta = ((((to - from) % 360) + 540) % 360) - 180;
+		return from + delta;
+	}
 </script>
 
-<!-- <section class="relative flex flex-col py-5 px-2 text-center gap-5">
-	<h1 class="h1">Hello, I'm a</h1>
-	<div class="grid grid-cols-3">
-		<div class="flex items-center justify-center text-center h1">Web developer</div>
-		<div class="flex items-center justify-center text-center h1">&</div>
-		<div class="flex items-center justify-center text-center h1">Instructional Designer</div>
-	</div>
-	<h1 class="h1">based in indonesia</h1>
-</section> -->
-<section
-	on:mousemove={handleMousemove}
-	bind:clientHeight={sh}
-	bind:clientWidth={sw}
-	on:click={() => {
-		mouseEnter = !mouseEnter;
-	}}
-	on:keypress={() => {
-		mouseEnter = !mouseEnter;
-	}}
-	class="relative h-screen border overflow-hidden"
->
-	<div class="absolute z-10">
-		<p>
-			The mouse position is {x} x {y}, {deg}, {sh}, {sw}, {centerXCoordinate}, {centerYCoordinate}
-		</p>
+<section class="relative h-[97vh] border-2 overflow-hidden m-3 rounded-xl variant-glass-secondary">
+	<div
+		class="
+		absolute z-20 top-0 bottom-0 left-0 right-0 mx-auto my-auto w-fit h-fit
+		transition-all
+		"
+		style="rotate: {deg}deg;"
+	>
+		<div
+			class="absolute top-0 bottom-0 left-0 right-0 mx-auto my-auto rotate-45
+			translate-x-[20.5%] transition-all duration-500 {revealAnimation(mouseEnter)}
+			bg-primary-500/50"
+		/>
 	</div>
 
 	<div
-		class="absolute top-0 bottom-0 left-0 right-0 mx-auto my-auto w-fit h-fit"
-		style="rotate: {deg ?? 0}deg;"
+		on:mouseenter={() => {
+			mouseEnter = true;
+		}}
+		on:mouseleave={() => {
+			if (deg !== 0) {
+				mouseEnter = false;
+				setTimeout(() => {
+					deg = 0;
+					setTimeout(() => {
+						mouseEnter = true;
+					}, 500);
+				}, 500);
+			}
+		}}
+		class="absolute z-50 w-[2100px] h-[2100px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-45"
 	>
 		<div
-			class="clip absolute -z-10 top-0 bottom-0 left-0 right-0 mx-auto my-auto rotate-45
-			translate-x-[20.5%] transition-all duration-500 {revealAnimation(mouseEnter)}
-			border bg-primary-500"
-		/>
+			class="
+			grid grid-rows-2 grid-cols-2 w-[2100px] h-[2100px]
+			"
+		>
+			<div
+				id="top"
+				on:click={() => {
+					deg = closestEquivalentAngle(deg, 270);
+				}}
+				on:keydown={() => {
+					deg = closestEquivalentAngle(deg, 270);
+				}}
+				class="bg-transparent w-full h-full relative overflow-hidden"
+			>
+				<div
+					class="
+				absolute -bottom-40 -right-40 -rotate-45 w-full h-full
+				flex items-end justify-center
+				"
+				>
+					<div class="flex items-center h-[29.5rem]">
+						<span class="rounded-full bg-secondary-500 w-5 h-5 border-2 border-primary-500" />
+					</div>
+				</div>
+			</div>
+			<div
+				id="right"
+				on:click={() => {
+					deg = closestEquivalentAngle(deg, 0);
+				}}
+				on:keydown={() => {
+					deg = closestEquivalentAngle(deg, 0);
+				}}
+				class="bg-transparent w-full h-full relative overflow-hidden"
+			>
+				<div
+					class="
+				absolute -bottom-40 -left-40 -rotate-45 w-full h-full
+				flex items-center justify-start
+				"
+				>
+					<div class="flex justify-center w-[45rem]">something</div>
+				</div>
+			</div>
+			<div
+				id="left"
+				on:click={() => {
+					deg = closestEquivalentAngle(deg, 180);
+				}}
+				on:keydown={() => {
+					deg = closestEquivalentAngle(deg, 180);
+				}}
+				class="bg-transparent w-full h-full relative overflow-hidden"
+			>
+				<div
+					class="
+				absolute -top-40 -right-40 -rotate-45 w-full h-full
+				flex items-center justify-end
+				"
+				>
+					<div class="flex justify-center w-[45rem]">something</div>
+				</div>
+			</div>
+			<div
+				id="bottom"
+				on:click={() => {
+					deg = closestEquivalentAngle(deg, 90);
+				}}
+				on:keydown={() => {
+					deg = closestEquivalentAngle(deg, 90);
+				}}
+				class="bg-transparent w-full h-full relative overflow-hidden"
+			>
+				<div
+					class="
+				absolute -top-40 right-40 -rotate-45 w-full h-full
+				flex items-start justify-center
+				"
+				>
+					<div class="flex items-center h-[29.5rem]">something</div>
+				</div>
+			</div>
+		</div>
 	</div>
+
+	<div
+		class="
+		absolute z-10 top-0 bottom-0 left-0 right-0 mx-auto my-auto
+		flex items-center w-36 h-36 bg-secondary-500 rounded-full border-2
+		"
+	/>
 	<svg
-		id="Layer_1"
-		style="rotate: {deg ?? 0}deg;"
-		class="h-24 fill-primary-500 absolute top-0 bottom-0 left-0 right-0 mx-auto my-auto"
+		class="
+			absolute z-30 top-0 bottom-0 left-0 right-0 mx-auto my-auto
+			scale-[0.045] fill-primary-500 transition-all
+			"
+		style="rotate: {deg}deg;"
 		xmlns="http://www.w3.org/2000/svg"
 		viewBox="0 0 165.15 173.99"
 		><path
@@ -78,6 +154,3 @@
 		/></svg
 	>
 </section>
-
-<style lang="postcss">
-</style>
