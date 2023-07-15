@@ -21,7 +21,7 @@
 
 <!-- App Shell -->
 
-<AppShell>
+<AppShell slotPageContent="bg-[url('https://picsum.photos/500')]">
 	<!-- <svelte:fragment slot="pageHeader"><Header /></svelte:fragment> -->
 	<!-- Router Slot -->
 	<slot />
