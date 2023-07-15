@@ -17,6 +17,7 @@
 
 <svelte:head>
 	<title>{site.siteName}</title>
+	<link rel="icon" href={site.siteLogo} />
 </svelte:head>
 
 <!-- App Shell -->
