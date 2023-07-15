@@ -13,37 +13,6 @@
 	let clipPath = path.right;
 </script>
 
-<!-- <div class="">
-	<button
-		on:click={() => {
-			clipPath = path.top;
-			deg = closestEquivalentAngle(deg, 270);
-		}}
-		class="btn variant-ghost-success rounded-full">Top</button
-	>
-	<button
-		on:click={() => {
-			clipPath = path.left;
-			deg = closestEquivalentAngle(deg, 180);
-		}}
-		class="btn variant-ghost-success rounded-full">Left</button
-	>
-	<button
-		on:click={() => {
-			clipPath = path.bottom;
-			deg = closestEquivalentAngle(deg, 90);
-		}}
-		class="btn variant-ghost-success rounded-full">Bottom</button
-	>
-	<button
-		on:click={() => {
-			clipPath = path.right;
-			deg = closestEquivalentAngle(deg, 0);
-		}}
-		class="btn variant-ghost-success rounded-full">Right</button
-	>
-</div> -->
-
 <section class="h-screen flex flex-col gap-5 items-center justify-center overflow-hidden">
 	<div
 		class="variant-glass-primary relative md:aspect-video aspect-[9/16] border rounded-xl h-[98vh] overflow-hidden"
@@ -91,7 +60,7 @@
 
 		<svg
 			class="
-			absolute z-30 top-0 bottom-0 left-0 right-0 mx-auto my-auto
+			absolute z-10 top-0 bottom-0 left-0 right-0 mx-auto my-auto
 			scale-[0.07] fill-primary-500 transition-all duration-300
 			"
 			style="rotate: {deg}deg;"
