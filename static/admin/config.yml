@@ -50,3 +50,10 @@ collections:
               widget: 'image',
               hint: 'Rename the file to: **logo.svg**'
             }
+      - label: 'About Me'
+        name: 'about'
+        file: 'src/content/about.md'
+        fields:
+          - { label: Name, name: name, widget: string }
+          - { label: 'Author Picture', name: 'picture', widget: 'image' }
+          - { label: 'Description', name: 'body', widget: 'markdown' }
