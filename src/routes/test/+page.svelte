@@ -3,7 +3,9 @@
 		top: '50% 50%, 20% 0, 20% 0, 80% 0, 80% 0',
 		left: '50% 50%, 25% 100%, 0 100%, 0 0, 25% 0',
 		bottom: '50% 50%, 80% 100%, 80% 100%, 20% 100%, 20% 100%',
-		right: '50% 50%, 75% 0, 100% 0, 100% 100%, 75% 100%'
+		right: '50% 50%, 75% 0, 100% 0, 100% 100%, 75% 100%',
+		none: '50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%',
+		full: '0 50%, 0 0, 100% 0, 100% 100%, 0 100%'
 	};
 	let deg = 0;
 	function closestEquivalentAngle(from, to) {
@@ -11,6 +13,10 @@
 		return from + delta;
 	}
 	let clipPath = path.right;
+
+	function logoFill(clipPath) {
+		return `${clipPath == path.full ? 'fill-secondary-500' : 'fill-primary-500'}`;
+	}
 </script>
 
 <section class="h-screen flex flex-col gap-5 items-center justify-center overflow-hidden">
@@ -61,8 +67,23 @@
 		<svg
 			class="
 			absolute z-10 top-0 bottom-0 left-0 right-0 mx-auto my-auto
-			scale-[0.07] fill-primary-500 transition-all duration-300
+			scale-[0.07] {logoFill(
+				clipPath
+			)} transition-all duration-300 cursor-pointer hover:fill-secondary-500
 			"
+			on:click={() => {
+				deg = closestEquivalentAngle(deg, 0);
+				if (clipPath !== path.full) {
+					clipPath = path.full;
+				} else clipPath = path.right;
+				console.log(clipPath);
+			}}
+			on:keydown={() => {
+				deg = closestEquivalentAngle(deg, 0);
+				if (clipPath !== path.full) {
+					clipPath = path.full;
+				} else clipPath = path.right;
+			}}
 			style="rotate: {deg}deg;"
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 165.15 173.99"
