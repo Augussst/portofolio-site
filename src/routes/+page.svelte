@@ -2,11 +2,18 @@
 	import { fade } from 'svelte/transition';
 	import Content from '$lib/components/Content.svelte';
 	import * as abouts from '$content/about.md';
+	import * as sites from '$content/settings.md';
+	const site = sites.metadata;
 	const about = abouts.metadata;
 
 	let clip = 100;
 	const toggleProjectMenu = () => {
 		clip = clip === 100 ? 0 : 100;
+	};
+	const projectMenuOpen = (clip) => {
+		if (clip == 100) {
+			return true;
+		} else return false;
 	};
 	let toggleIDMenu = false;
 	let toggleWebMenu = false;
@@ -15,7 +22,7 @@
 
 <section
 	class="
-        flex max-lg:flex-col h-screen w-screen p-3 overflow-hidden
+        flex max-lg:flex-col h-[100dvh] w-screen p-3 overflow-hidden
         {transition}"
 >
 	<Content margin="lg:mr-3 max-lg:mb-3" menu={toggleWebMenu} {transition}
@@ -28,37 +35,27 @@
 
 	<div
 		class="
-            relative flex grow items-center justify-center border {transition} rounded-xl
+            relative flex flex-col grow items-center justify-center border {transition} rounded-xl
             py-5 bg-secondary-400
             "
 	>
-		<!-- <button
-			on:click={toggleProjectMenu}
-			class="btn flex flex-col gap-2 items-center justify-center"
-		>
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				class="h-full max-h-28 fill-primary-500"
-				viewBox="0 0 165.15 173.99"
-				><path
-					d="M109.79,139.84l17.79,17.78c-12.82,8.05-27.98,12.7-44.24,12.7C37.31,170.33,0,133.02,0,87,0,40.97,37.31,3.66,83.33,3.66c16.26,0,31.42,4.65,44.24,12.7l-17.79,17.78-.55,.55c-7.95-3.95-16.77-6.03-25.9-6.03-15.58,0-30.23,6.07-41.25,17.09-11.02,11.02-17.08,25.67-17.08,41.25,0,15.58,6.07,30.23,17.09,41.25,11.02,11.02,25.67,17.08,41.25,17.08,9.14,0,17.95-2.09,25.9-6.04l.55,.55Z"
-				/><path
-					d="M161.49,152.65c4.88,4.88,4.88,12.8,0,17.68-2.44,2.44-5.64,3.66-8.84,3.66s-6.4-1.22-8.84-3.66l-14.09-14.09-18.16-18.16-42.24-42.24c-4.88-4.88-4.88-12.8,0-17.68l42.24-42.24,18.16-18.16,14.09-14.09C146.25,1.22,149.45,0,152.65,0s6.4,1.22,8.84,3.66c2.44,2.44,3.66,5.64,3.66,8.84s-1.22,6.4-3.66,8.84l-56.81,56.82c-4.88,4.88-4.88,12.8,0,17.68l56.82,56.81Z"
-				/></svg
-			>
-			<h1 class="h1 !m-0">okreate</h1>
-		</button> -->
-
-		<div class="btn">
+		<div class="btn transition-all">
 			<button on:click={toggleProjectMenu} class="flex flex-col gap-2 items-center justify-center">
 				<img
 					src={about.picture}
 					alt="profile"
 					class="h-full rounded-full max-h-28 fill-primary-500 animate-[spin_10s_linear_infinite]"
 				/>
-				<h1 class="h1 !m-0">About me</h1>
+				<h1 class="h1 !m-0">{about.name}</h1>
 			</button>
 		</div>
+		{#if projectMenuOpen(clip) == false}
+			<div transition:fade={{ delay: 1000 }} class="mx-10">
+				<article class="prose prose-invert [&>*]:text-token">
+					<svelte:component this={abouts.default} />
+				</article>
+			</div>
+		{/if}
 
 		<div
 			style="clip-path: circle({clip}% at 50% 46.9%);"
@@ -68,23 +65,13 @@
                 bg-secondary-500 rounded-xl
             "
 		>
-			<!-- <div class="btn">
-				<button
-					on:click={toggleProjectMenu}
-					class="flex flex-col gap-2 items-center justify-center animate-[spin_10s_linear_infinite]"
-				>
-					<img
-						src="{about.picture}"
-						alt="profile"
-						class="h-full rounded-full max-h-28 fill-primary-500"
-					/>
-					<h1 class="h1 !m-0 absolute w-40 -bottom-14">About me</h1>
-				</button>
-			</div> -->
-
 			<button
-				on:click={toggleProjectMenu}
-				class="btn flex flex-col gap-2 items-center justify-center"
+				on:click={toggleWebMenu == true || toggleIDMenu == true ? '' : toggleProjectMenu}
+				class="flex flex-col gap-2 items-center justify-center
+						{toggleWebMenu == true || toggleIDMenu == true
+					? ''
+					: 'btn active:scale-100 hover:scale-105 hover:drop-shadow-[0_0_15px_rgba(225,225,225,0.5)]'}
+				"
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -96,7 +83,7 @@
 						d="M161.49,152.65c4.88,4.88,4.88,12.8,0,17.68-2.44,2.44-5.64,3.66-8.84,3.66s-6.4-1.22-8.84-3.66l-14.09-14.09-18.16-18.16-42.24-42.24c-4.88-4.88-4.88-12.8,0-17.68l42.24-42.24,18.16-18.16,14.09-14.09C146.25,1.22,149.45,0,152.65,0s6.4,1.22,8.84,3.66c2.44,2.44,3.66,5.64,3.66,8.84s-1.22,6.4-3.66,8.84l-56.81,56.82c-4.88,4.88-4.88,12.8,0,17.68l56.82,56.81Z"
 					/></svg
 				>
-				<h1 class="h1 !m-0">okreate</h1>
+				<h1 class="h1 !m-0">{site.siteName}</h1>
 			</button>
 
 			{#if !toggleWebMenu && !toggleIDMenu}
