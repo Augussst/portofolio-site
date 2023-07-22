@@ -28,8 +28,6 @@
 	<script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
 </svelte:head>
 
-<!-- App Shell -->
-
 <main class="flex max-lg:flex-col h-[100dvh] w-screen p-3 overflow-hidden">
 	{#each project_metadata.projectTypes as project}
 		{#if project.position == 'left'}

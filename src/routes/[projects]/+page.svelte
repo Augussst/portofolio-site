@@ -1,10 +1,12 @@
 <script>
 	import { page } from '$app/stores';
 	import { fade } from 'svelte/transition';
-	const data = $page.data;
+	export let data;
 </script>
 
-{#key data.url}
+<pre>{JSON.stringify(data, null, 2)}</pre>
+
+<!-- {#key data.url}
 	<section class="p-3" in:fade={{ delay: 250 }} out:fade>
 		<h1>This is left</h1>
 		<p>
@@ -13,4 +15,4 @@
 			rem? Rerum doloremque quibusdam molestias veniam.
 		</p>
 	</section>
-{/key}
+{/key} -->
