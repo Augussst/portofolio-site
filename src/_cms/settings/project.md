@@ -1,15 +1,11 @@
 ---
 menu:
   - position: left
-    title: |-
-      Web Development
-      Projects
+    title: Web Development<br/>Projects
     slug: webdev
-    icon: /static/images/uploads/icon/webdev.svg
+    icon: streamline:programming-browser-code-2-code-browser-tags-angle-programming-bracket
   - position: right
-    title: |-
-      Instructional Design
-      Projects
+    title: Instructional Design<br/>Projects
     slug: instructional-design
-    icon: /static/images/uploads/icon/instructional_design.svg
+    icon: fluent-mdl2:learning-tools
 ---
