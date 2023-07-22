@@ -9,7 +9,7 @@ public_folder: '/images/uploads' # The src attribute for uploaded media will beg
 collections:
   - name: 'blog' # Used in routes, e.g., /admin/collections/blog
     label: 'Blog' # Used in the UI
-    folder: 'src/content/blog' # The path to the folder where the documents are stored
+    folder: 'src/_cms/blog' # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
@@ -18,41 +18,69 @@ collections:
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Featured Image', name: 'thumbnail', widget: 'image', required: false }
       - { label: 'Body', name: 'body', widget: 'markdown' }
-  - name: 'embeds'
-    label: 'Embeds'
-    folder: 'src/content/embeds'
+  - name: 'projects'
+    label: 'Projects'
+    folder: 'src/_cms/projects'
+    editor:
+      preview: false
     create: true
-    slug: '{{slug}}'
+    slug: '{{projectType}}/{{title}}'
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-      - label: 'Types'
-        name: 'types'
-        widget: 'select'
-        options:
-          - { label: 'Video Motion Graphics', value: 'vmg' }
-          - { label: 'Video Pembelajaran', value: 'vp' }
-          - { label: 'Media Interaktif', value: 'mi' }
-      - { label: 'Url', name: 'url', widget: 'string', hint: 'url embed' }
-      - { label: 'Description', name: 'body', widget: 'markdown' }
+      - label: 'Project Type'
+        name: 'projectType'
+        widget: 'relation'
+        collection: 'settings'
+        file: 'projectSetting'
+        search_fields: ['projectTypes.*.title']
+        display_fields: ['projectTypes.*.title']
+        value_field: 'projectTypes.*.slug'
   - name: 'settings'
     label: 'Settings'
     editor:
       preview: false
     files:
       - label: 'Meta Settings'
-        name: 'settings'
-        file: 'src/content/settings.md'
+        name: 'meta'
+        file: 'src/_cms/settings/meta.md'
         fields:
           - { label: Site Name, name: siteName, widget: string }
-          - {
-              label: 'Site Logo',
-              name: 'siteLogo',
-              widget: 'image',
-              hint: 'Rename the file to: **logo.svg**'
-            }
-      - label: 'About Me'
+          - { label: 'Site Logo', name: 'siteLogo', widget: 'image' }
+          - { label: 'Alternative Site Logo', name: 'altSiteLogo', widget: 'image' }
+      - label: 'Project Setting'
+        name: 'projectSetting'
+        file: 'src/_cms/settings/project.md'
+        fields:
+          - label: 'Project Types'
+            name: 'projectTypes'
+            widget: 'list'
+            max: 2
+            min: 2
+            allow_add: true
+            summary: '{{fields.title}} (Pos: {{fields.position}} - Slug: {{fields.slug}})'
+            fields:
+              - {
+                  label: 'Button Position',
+                  name: 'position',
+                  widget: 'select',
+                  options: ['left', 'right']
+                }
+              - {
+                  label: 'Title',
+                  name: 'title',
+                  widget: 'string',
+                  hint: 'use **<br/>** for new line'
+                }
+              - { label: 'Slug', name: 'slug', widget: 'string' }
+              - {
+                  label: 'Icon',
+                  name: 'icon',
+                  widget: 'string',
+                  hint: 'get the icon name from **[Iconify](https://icon-sets.iconify.design)**'
+                }
+      - label: 'About Page'
         name: 'about'
-        file: 'src/content/about.md'
+        file: 'src/_cms/settings/about.md'
         fields:
           - { label: Name, name: name, widget: string }
           - { label: 'Author Picture', name: 'picture', widget: 'image' }
