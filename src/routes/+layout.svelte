@@ -31,7 +31,7 @@
 <!-- App Shell -->
 
 <main class="flex max-lg:flex-col h-[100dvh] w-screen p-3 overflow-hidden">
-	{#each project_metadata.menu as project}
+	{#each project_metadata.projectTypes as project}
 		{#if project.position == 'left'}
 			<SidePage trigger={data.url == `/${project.slug}`} margin="lg:mr-3 max-lg:mb-3" {transition}>
 				{#if data.url !== '/'}
@@ -71,7 +71,7 @@
 		{/if}
 
 		{#if data.url == '/'}
-			{#each project_metadata.menu as project}
+			{#each project_metadata.projectTypes as project}
 				{#if project.position == 'left'}
 					<a
 						transition:fade
@@ -99,7 +99,7 @@
 		{/if}
 	</div>
 
-	{#each project_metadata.menu as project}
+	{#each project_metadata.projectTypes as project}
 		{#if project.position == 'right'}
 			<SidePage trigger={data.url == `/${project.slug}`} margin="lg:ml-3 max-lg:mt-3" {transition}>
 				{#if data.url !== '/'}
