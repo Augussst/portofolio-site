@@ -4,10 +4,9 @@
 	export let data;
 </script>
 
-<pre>{JSON.stringify(data, null, 2)}</pre>
-
-<!-- {#key data.url}
+{#key data.url}
 	<section class="p-3" in:fade={{ delay: 250 }} out:fade>
+		<pre>{JSON.stringify(data, null, 2)}</pre>
 		<h1>This is left</h1>
 		<p>
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione modi optio quasi obcaecati
@@ -15,4 +14,4 @@
 			rem? Rerum doloremque quibusdam molestias veniam.
 		</p>
 	</section>
-{/key} -->
+{/key}
