@@ -1,0 +1,52 @@
+<script>
+	export let title;
+	export let trigger;
+	export let href;
+	export let icon = '';
+	import { fly, slide } from 'svelte/transition';
+</script>
+
+<section
+	class="flex grow border rounded-xl transition-all duration-500
+			{trigger == href ? 'h-full' : 'h-20'}"
+>
+	<div class="relative flex flex-col w-full h-full overflow-clip">
+		{#if trigger !== href}
+			<a
+				out:slide={{ duration: 250 }}
+				{href}
+				class="
+					relative group flex flex-col items-center justify-center overflow-hidden rounded-xl w-full h-20 font-heading-token text-4xl transition-all
+				"
+			>
+				<span
+					class="
+					absolute -translate-y-20 flex gap-3 items-center justify-center w-full h-20 bg-primary-500 text-secondary-500 transition-all
+					group-hover:-translate-y-0
+					"
+				>
+					<iconify-icon {icon} />
+					{title}
+					<iconify-icon {icon} />
+				</span>
+				<span class="transition-all">
+					{title}
+				</span>
+			</a>
+		{/if}
+		{#if trigger == href}
+			<div in:fly={{ delay: 250 }} out:fly class="absolute w-full h-full">
+				<div class="flex items-center gap-1 border rounded-t-xl px-3 py-1">
+					<iconify-icon class="text-xl" {icon} />
+					<h1 class="h1 text-2xl">{title}</h1>
+				</div>
+				<div class="p-3 w-full h-full">
+					<slot />
+				</div>
+			</div>
+		{/if}
+	</div>
+</section>
+
+<style lang="postcss">
+</style>
