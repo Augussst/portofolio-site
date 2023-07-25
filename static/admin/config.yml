@@ -34,7 +34,7 @@ collections:
         file: 'projectSetting'
         search_fields: ['projectTypes.*.title']
         display_fields: ['projectTypes.*.title']
-        value_field: ['projectTypes.*.title', 'projectTypes.*.slug']
+        value_field: 'projectTypes.*'
   - name: 'settings'
     label: 'Settings'
     editor:
