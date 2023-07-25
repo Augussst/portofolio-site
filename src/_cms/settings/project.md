@@ -1,11 +1,9 @@
 ---
 projectTypes:
-  - position: left
-    title: Web Development
+  - title: Web Development
     slug: webdev
     icon: streamline:programming-browser-code-2-code-browser-tags-angle-programming-bracket
-  - position: right
-    title: Instructional Design
+  - title: Instructional Design
     slug: instructional-design
     icon: fluent-mdl2:learning-tools
   - title: Motion Graphics
