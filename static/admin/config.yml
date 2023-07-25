@@ -34,7 +34,7 @@ collections:
         file: 'projectSetting'
         search_fields: ['projectTypes.*.title']
         display_fields: ['projectTypes.*.title']
-        value_field: 'projectTypes.*.slug'
+        value_field: ['projectTypes.*.title', 'projectTypes.*.slug']
   - name: 'settings'
     label: 'Settings'
     editor:
@@ -47,6 +47,20 @@ collections:
           - { label: Site Name, name: siteName, widget: string }
           - { label: 'Site Logo', name: 'siteLogo', widget: 'image' }
           - { label: 'Alternative Site Logo', name: 'altSiteLogo', widget: 'image' }
+          - label: 'Page'
+            name: 'page'
+            widget: 'list'
+            allow_add: true
+            summary: '{{fields.title}} ({{fields.slug}})'
+            fields:
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - { label: 'Slug', name: 'slug', widget: 'string', required: false }
+              - {
+                  label: 'Icon',
+                  name: 'icon',
+                  widget: 'string',
+                  hint: 'get the icon name from **[Iconify](https://icon-sets.iconify.design)**'
+                }
       - label: 'Project Setting'
         name: 'projectSetting'
         file: 'src/_cms/settings/project.md'
@@ -54,23 +68,10 @@ collections:
           - label: 'Project Types'
             name: 'projectTypes'
             widget: 'list'
-            max: 2
-            min: 2
             allow_add: true
-            summary: '{{fields.title}} (Pos: {{fields.position}} - Slug: {{fields.slug}})'
+            summary: '{{fields.title}} ({{fields.slug}})'
             fields:
-              - {
-                  label: 'Button Position',
-                  name: 'position',
-                  widget: 'select',
-                  options: ['left', 'right']
-                }
-              - {
-                  label: 'Title',
-                  name: 'title',
-                  widget: 'string',
-                  hint: 'use **<br/>** for new line'
-                }
+              - { label: 'Title', name: 'title', widget: 'string' }
               - { label: 'Slug', name: 'slug', widget: 'string' }
               - {
                   label: 'Icon',
