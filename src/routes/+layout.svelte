@@ -24,14 +24,13 @@
 
 <main class="flex max-lg:flex-col h-[100dvh] w-screen p-3 overflow-hidden">
 	<div class="flex flex-col gap-3 h-full w-full">
-		<PageSection trigger={data.url} icon="material-symbols:home-outline" href="/" title="Home"
-			><slot /></PageSection
-		>
-		<PageSection trigger={data.url} icon="wpf:create-new" href="/projects" title="Projects"
-			><slot /></PageSection
-		>
-		<PageSection trigger={data.url} icon="mdi:about" href="/about" title="About"
-			><slot /></PageSection
-		>
+		{#each site.page as page}
+			<PageSection
+				trigger={data.url.split('/')[1]}
+				icon={page.icon}
+				href="/{page.slug ?? ''}"
+				title={page.title}><slot /></PageSection
+			>
+		{/each}
 	</div>
 </main>
