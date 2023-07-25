@@ -42,7 +42,7 @@
 					<iconify-icon class="text-xl" {icon} />
 					<h1 class="h1 text-2xl">{title}</h1>
 				</div>
-				<div class="w-full h-full overflow-auto">
+				<div class="w-full h-full">
 					<slot />
 				</div>
 			</div>
