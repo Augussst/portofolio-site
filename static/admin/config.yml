@@ -24,7 +24,7 @@ collections:
     editor:
       preview: false
     create: true
-    slug: '{{title}}'
+    slug: '{{fields.projectType}}/{{title}}'
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - label: 'Project Type'
@@ -34,7 +34,7 @@ collections:
         file: 'projectSetting'
         search_fields: ['projectTypes.*.title']
         display_fields: ['projectTypes.*.title']
-        value_field: 'projectTypes.*'
+        value_field: 'projectTypes.*.slug'
       - { label: 'Project Picture', name: 'picture', widget: 'image', required: false }
       - { label: 'Project file', name: 'file', widget: 'file', required: false }
       - { label: 'Project Url (Embeds)', name: 'url', widget: 'string', required: false }
