@@ -1,21 +1,25 @@
 <script>
+	import ProjectGrid from '$lib/components/ProjectGrid.svelte';
+	import ProjectItem from '$lib/components/ProjectItem.svelte';
+
 	export let data;
-	$: ({ projectByTypes } = data);
+	$: ({ projectByTypes, site } = data);
+	let lastItem = (a, i) => i == a.length - 1;
 </script>
 
-{#each projectByTypes as type}
-	<h1 class="h1 flex items-center gap-2 text-2xl"><iconify-icon icon={type.icon} />{type.title}</h1>
-	<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 py-3">
+{#each projectByTypes as type, i}
+	<ProjectGrid
+		typeTitle={type.title}
+		typeIcon={type.icon}
+		class={lastItem(projectByTypes, i) ? '' : 'pb-3'}
+	>
 		{#each type.projects as project}
-			<a
-				class="flex items-center gap-2 border border-primary-500 p-1"
-				href="./projects/{type.slug}/{project.slug}"
-			>
-				<img class="aspect-video w-52 h-auto" src="https://picsum.photos/200/500" alt="" />
-				<h2 class="h2 text-xl whitespace-normal font-token text-left">{project.title}</h2>
-			</a>
+			<ProjectItem
+				projectTitle={project.title}
+				href="{type.slug}/{project.slug}"
+				projectThumbnail={project.thumbnail}
+				thumbnailFallback={site.siteLogo}
+			/>
 		{/each}
-	</div>
+	</ProjectGrid>
 {/each}
-
-<!-- <pre>{JSON.stringify(projectByTypes, null, 2)}</pre> -->

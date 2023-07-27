@@ -1,13 +1,22 @@
 <script>
+	import ProjectGrid from '$lib/components/ProjectGrid.svelte';
+	import ProjectItem from '$lib/components/ProjectItem.svelte';
+
 	export let data;
+	$: ({ projectByTypes, params, site } = data);
 </script>
 
-<section class="p-3">
-	<pre>{JSON.stringify(data, null, 2)}</pre>
-	<h1>This is left</h1>
-	<p>
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione modi optio quasi obcaecati
-		dignissimos, distinctio expedita beatae aliquam nemo quis vero, repellendus, sapiente enim rem?
-		Rerum doloremque quibusdam molestias veniam.
-	</p>
-</section>
+{#each projectByTypes as type}
+	{#if type.slug == params.projectType}
+		<ProjectGrid typeTitle={type.title} typeIcon={type.icon}>
+			{#each type.projects as project}
+				<ProjectItem
+					projectTitle={project.title}
+					href="{type.slug}/{project.slug}"
+					projectThumbnail={project.thumbnail}
+					thumbnailFallback={site.siteLogo}
+				/>
+			{/each}
+		</ProjectGrid>
+	{/if}
+{/each}
