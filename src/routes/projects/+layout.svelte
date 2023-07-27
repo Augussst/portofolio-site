@@ -6,31 +6,33 @@
 	};
 </script>
 
-<ul class="flex items-center gap-2 border-b px-3 py-2">
-	<li
-		class="
-        {activeClass(undefined)}
-        px-2 py-1 border rounded-xl hover:bg-primary-500 hover:text-secondary-500 transition-all"
-	>
-		<a href="/projects" class="flex items-center gap-1">
-			<iconify-icon icon="ic:round-select-all" />
-			All
-		</a>
-	</li>
-	{#each projectTypes as projectType}
+{#if params?.project == undefined}
+	<ul class="flex flex-wrap items-center gap-2 border-b px-3 py-2">
 		<li
 			class="
-                {activeClass(projectType.slug)} 
-                px-2 py-1 border rounded-xl hover:bg-primary-500 hover:text-secondary-500 transition-all
-            "
+			{activeClass(undefined)}
+			px-2 py-1 border rounded-xl hover:bg-primary-500 hover:text-secondary-500 transition-all"
 		>
-			<a href="/projects/{projectType.slug}" class="flex items-center gap-1 whitespace-nowrap">
-				<iconify-icon icon={projectType.icon} />
-				{projectType.title}
+			<a href="/projects" class="flex items-center gap-1">
+				<iconify-icon icon="ic:round-select-all" />
+				All
 			</a>
 		</li>
-	{/each}
-</ul>
+		{#each projectTypes as projectType}
+			<li
+				class="
+				{activeClass(projectType.slug)} 
+				px-2 py-1 border rounded-xl hover:bg-primary-500 hover:text-secondary-500 transition-all
+			"
+			>
+				<a href="/projects/{projectType.slug}" class="flex items-center gap-1 whitespace-nowrap">
+					<iconify-icon icon={projectType.icon} />
+					{projectType.title}
+				</a>
+			</li>
+		{/each}
+	</ul>
+{/if}
 
 <section class="p-3 flex-auto h-full overflow-auto">
 	<slot />
