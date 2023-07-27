@@ -10,7 +10,7 @@
 	class="flex grow border rounded-xl transition-all duration-500
 			{trigger == href.split('/')[1] ? 'h-full' : 'h-14'}"
 >
-	<div class="relative flex flex-col w-full h-full overflow-clip">
+	<div class="relative flex flex-col w-full h-full">
 		{#if trigger !== href.split('/')[1]}
 			<a
 				out:slide={{ duration: 250 }}
@@ -37,12 +37,12 @@
 			</a>
 		{/if}
 		{#if trigger == href.split('/')[1]}
-			<div in:fly={{ delay: 250 }} out:fly class="absolute w-full h-full">
-				<div class="flex items-center gap-1 border-b px-3 py-1">
+			<div in:fly={{ delay: 250 }} out:fly class="absolute flex flex-col h-full w-full">
+				<div class="flex flex-grow-0 flex-shrink basis-auto items-center gap-1 border-b px-3 py-1">
 					<iconify-icon class="text-xl" {icon} />
 					<h1 class="h1 text-2xl">{title}</h1>
 				</div>
-				<div class="w-full h-full">
+				<div class="flex flex-col flex-auto overflow-auto">
 					<slot />
 				</div>
 			</div>

@@ -24,7 +24,7 @@
                 px-2 py-1 border rounded-xl hover:bg-primary-500 hover:text-secondary-500 transition-all
             "
 		>
-			<a href="/projects/{projectType.slug}" class="flex items-center gap-1">
+			<a href="/projects/{projectType.slug}" class="flex items-center gap-1 whitespace-nowrap">
 				<iconify-icon icon={projectType.icon} />
 				{projectType.title}
 			</a>
@@ -32,8 +32,6 @@
 	{/each}
 </ul>
 
-<!-- <pre>{JSON.stringify(projectByTypes, null, 2)}</pre> -->
-
-<section class="p-3 w-full h-full overflow-auto">
+<section class="p-3 flex-auto h-full overflow-auto">
 	<slot />
 </section>
