@@ -35,7 +35,14 @@ collections:
         search_fields: ['projectTypes.*.title']
         display_fields: ['projectTypes.*.title']
         value_field: 'projectTypes.*.slug'
-      - { label: 'Project Picture', name: 'picture', widget: 'image', required: false }
+      - { label: 'Thumbnail', name: 'thumbnail', widget: 'image', required: false }
+      - label: 'Project Images'
+        name: 'projectImages'
+        widget: 'list'
+        allow_add: true
+        summary: '{{fields.picture}}'
+        fields:
+          - { label: 'Project Picture', name: 'picture', widget: 'image', required: false }
       - { label: 'Project file', name: 'file', widget: 'file', required: false }
       - { label: 'Project Url (Embeds)', name: 'url', widget: 'string', required: false }
       - { label: 'Description', name: 'body', widget: 'markdown' }
