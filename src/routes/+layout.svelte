@@ -9,11 +9,10 @@
 	import '@fontsource/staatliches';
 	import '@fontsource/ubuntu';
 
-	import * as sites from '$cms/settings/meta.md';
 	import PageSection from '$lib/components/PageSection.svelte';
-	const site = sites.metadata;
 
 	export let data;
+	$: ({ site } = data);
 </script>
 
 <svelte:head>

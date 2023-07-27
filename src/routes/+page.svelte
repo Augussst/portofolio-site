@@ -1,8 +1,8 @@
 <script>
 	import * as about_metadata from '$cms/settings/about.md';
-	import * as meta_metadata from '$cms/settings/meta.md';
+	export let data;
+	$: ({ site } = data);
 	const about = about_metadata.metadata;
-	const meta = meta_metadata.metadata;
 </script>
 
 <div class="flex flex-col gap-3 items-center justify-center w-full h-full">
@@ -17,5 +17,5 @@
 			></g
 		></svg
 	>
-	<h1 class="h1">{meta.siteName}</h1>
+	<h1 class="h1">{site.siteName}</h1>
 </div>
