@@ -24,7 +24,7 @@ collections:
     editor:
       preview: false
     create: true
-    slug: '{{fields.projectType}}/{{title}}'
+    slug: '{{title}}'
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - label: 'Project Type'
