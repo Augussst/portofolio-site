@@ -1,3 +1,7 @@
+<script context="module">
+	export let section;
+</script>
+
 <script>
 	export let data;
 	$: ({ params, projectTypes } = data);
@@ -54,6 +58,6 @@
 	</div>
 {/if}
 
-<section class="p-3 flex-auto h-full overflow-auto">
+<section bind:this={section} class="p-3 flex-auto h-full overflow-auto">
 	<slot />
 </section>
