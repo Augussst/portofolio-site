@@ -1,38 +1,19 @@
 <script>
-	// import { Iframe } from '$lib/components/Iframe.svelte';
+	import Iframe from '$lib/components/Iframe.svelte';
 
 	export let data;
-	$: ({ projectByTypes, params } = data);
-	// $: getProject = () => {
-	// 	const currentProjectType = projectByTypes.filter((type) => type.slug === params.projectType);
-	// 	const project = currentProjectType[0].projects;
-	// 	const currentProject = project.filter((project) => project.slug === params.project);
-	// 	return currentProject[0];
-	// };
+	$: ({ meta, content } = data);
 </script>
 
-{#each projectByTypes as type}
-	{#each type.projects as project}
-		{#if project.slug == params.project}
-			<div class="flex items-center border-b gap-2 -mt-3 -mx-3 px-3 py-2">
-				<a class="flex gap-1 items-center px-2 py-1 border rounded-xl" href="/projects">
-					<iconify-icon icon="ep:back" />
-					<span>Back</span>
-				</a>
-				<div class="flex gap-1 items-center px-2 py-1 border rounded-xl">
-					<iconify-icon icon={type.icon} />
-					<span>{type.title}</span>
-				</div>
-			</div>
-			<div class="pt-3">
-				<h1 class="h1">{project.title}</h1>
-				<!-- <Iframe
-					title={project.title}
-					src="https://augussst.github.io/AS-LuasdanVolume-BangunRuang/"
-				/> -->
-				<svelte:component this={project.content} />
-			</div>
-		{/if}
-	{/each}
-{/each}
-<!-- <pre>{JSON.stringify(projectByTypes, null, 2)}</pre> -->
+<div class="pt-3 container mx-auto">
+	<h1 class="h1 flex items-center gap-2">{meta.title}</h1>
+	<Iframe
+		class="border rounded-xl overflow-clip"
+		width="max-w-4xl"
+		title={meta.title}
+		src="https://augussst.github.io/AS-LuasdanVolume-BangunRuang/"
+	/>
+	<div class="prose prose-invert text-token mx-auto max-w-4xl">
+		<svelte:component this={content} />
+	</div>
+</div>
