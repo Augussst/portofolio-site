@@ -1,6 +1,6 @@
 ---
 title: BSI Library Web
-projectType: webdev
+projectType: front-end-dev
 ---
 
 test
