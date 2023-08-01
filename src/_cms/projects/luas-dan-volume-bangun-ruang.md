@@ -4,7 +4,7 @@ projectType: instructional-design
 tools:
   - tool: Articulate Storyline
   - tool: Adobe Illustrator
-thumbnail: /images/uploads/luasdanvolumebangunruang-small.gif
+thumbnail: /images/uploads/luasdanvolumebangunruang.gif
 projectImages: []
 file: ""
 url: https://augussst.github.io/AS-LuasdanVolume-BangunRuang/
