@@ -1,5 +1,9 @@
 <script context="module">
 	export let section;
+
+	export function scrollToTop() {
+		section.scrollTo({ top: 0, behavior: 'smooth' });
+	}
 </script>
 
 <script>
