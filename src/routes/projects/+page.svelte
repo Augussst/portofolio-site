@@ -11,7 +11,7 @@
 	<ProjectGrid
 		typeTitle={type.title}
 		typeIcon={type.icon}
-		class={lastItem(projectByTypes, i) ? '' : 'pb-3'}
+		class={lastItem(projectByTypes, i) ? '' : 'mb-3'}
 	>
 		{#each type.projects as project}
 			<ProjectItem
