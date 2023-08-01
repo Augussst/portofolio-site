@@ -6,10 +6,14 @@
 </script>
 
 <a
-	class="flex flex-col btn items-center gap-2 border rounded border-primary-500 p-1"
+	class="group relative z-20 flex flex-col items-center gap-2 border rounded overflow-clip
+	transition-all duration-300
+	"
 	href="/projects/{href}"
 >
-	<div class="relative aspect-video w-full h-auto">
+	<div
+		class="relative group-hover:scale-110 transition-all duration-300 aspect-video w-full h-auto"
+	>
 		<div
 			style="
 						background: linear-gradient(
@@ -28,7 +32,11 @@
 			alt="{projectTitle} image"
 		/>
 	</div>
-	<h2 class="h2 !ml-0 text-lg text-center whitespace-normal font-token">
-		{projectTitle}
-	</h2>
+	<div
+		class="absolute z-10 inset-0 rounded px-5 flex items-center justify-center w-full h-full variant-glass-secondary backdrop-blur-sm group-hover:opacity-0 transition-all duration-300"
+	>
+		<h2 class="h2 text-4xl text-center drop-shadow-lg whitespace-normal">
+			{projectTitle}
+		</h2>
+	</div>
 </a>
