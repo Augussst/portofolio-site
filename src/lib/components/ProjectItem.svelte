@@ -7,7 +7,7 @@
 
 <a
 	class="flex flex-col btn items-center gap-2 border rounded border-primary-500 p-1"
-	href="./projects/{href}"
+	href="/projects/{href}"
 >
 	<div class="relative aspect-video w-full h-auto">
 		<div

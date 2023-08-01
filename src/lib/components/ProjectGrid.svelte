@@ -9,6 +9,6 @@
 	<iconify-icon icon={typeIcon} />
 	{typeTitle}
 </h1>
-<div class="grid gap-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-3 {className}">
+<div class="grid gap-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-5 mt-3 {className}">
 	<slot />
 </div>
