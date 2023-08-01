@@ -25,7 +25,7 @@
 	<div
 		class="absolute z-10 inset-0 rounded px-5 flex items-center justify-center w-full h-full variant-glass-secondary backdrop-blur-sm group-hover:opacity-0 transition-all duration-300"
 	>
-		<h2 class="h2 text-3xl lg:text-4xl text-center drop-shadow-lg whitespace-normal">
+		<h2 class="h2 text-xl md:text-3xl lg:text-4xl text-center drop-shadow-lg whitespace-normal">
 			{projectTitle}
 		</h2>
 	</div>
