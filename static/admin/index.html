@@ -6,6 +6,17 @@
 		<meta name="robots" content="noindex" />
 		<link rel="icon" href="../images/uploads/logo-with-bg.svg" />
 		<title>okreate: Content Manager</title>
+	</head>
+	<body>
+		<!-- Include the script that builds the page and powers Decap CMS -->
+		<script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+		<script
+			type="text/javascript"
+			src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+		></script>
+		<script>
+			CMS.registerRemarkPlugin(remarkBreaks);
+		</script>
 		<script>
 			if (window.netlifyIdentity) {
 				window.netlifyIdentity.on('init', (user) => {
@@ -17,13 +28,5 @@
 				});
 			}
 		</script>
-	</head>
-	<body>
-		<!-- Include the script that builds the page and powers Decap CMS -->
-		<script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-		<script
-			type="text/javascript"
-			src="https://identity.netlify.com/v1/netlify-identity-widget.js"
-		></script>
 	</body>
 </html>
