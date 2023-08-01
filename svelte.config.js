@@ -1,10 +1,12 @@
 import adapter from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 import { mdsvex } from 'mdsvex';
+import remarkBreaks from 'remark-breaks';
 
 /** @type {import('mdsvex').MdsvexOptions} */
 const mdsvexOptions = {
-	extensions: ['.md']
+	extensions: ['.md'],
+	remarkPlugins: [remarkBreaks]
 };
 
 /** @type {import('@sveltejs/kit').Config} */

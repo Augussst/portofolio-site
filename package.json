@@ -32,6 +32,7 @@
 	"type": "module",
 	"dependencies": {
 		"@fontsource/staatliches": "^5.0.5",
-		"@fontsource/ubuntu": "^5.0.5"
+		"@fontsource/ubuntu": "^5.0.5",
+		"remark-breaks": "^3.0.3"
 	}
 }
