@@ -35,7 +35,7 @@
 				Your browser does not support the video tag.
 			</video>
 		{/if}
-		<div class="prose prose-invert text-token mx-auto max-w-4xl">
+		<div class="prose text-token mx-auto max-w-4xl">
 			<svelte:component this={content} />
 		</div>
 	</div>
