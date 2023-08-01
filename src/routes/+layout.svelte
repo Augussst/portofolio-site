@@ -28,8 +28,10 @@
 				trigger={data.url.split('/')[1]}
 				icon={page.icon}
 				href="/{page.slug ?? ''}"
-				title={page.title}><slot /></PageSection
+				title={page.title}
 			>
+				<slot />
+			</PageSection>
 		{/each}
 	</div>
 </main>
