@@ -32,6 +32,26 @@
 			</li>
 		{/each}
 	</ul>
+{:else}
+	<div class="flex items-center border-b gap-2 px-3 py-2">
+		<a
+			class="flex gap-1 items-center px-2 py-1 border rounded-xl hover:bg-primary-500 hover:text-secondary-500 transition-all"
+			href="/projects"
+		>
+			<iconify-icon icon="ep:back" />
+			<span>Back</span>
+		</a>
+		{#each projectTypes as projectType}
+			{#if projectType.slug == params.projectType}
+				<span
+					class="flex items-center gap-1 whitespace-nowrap px-2 py-1 border rounded-xl bg-primary-500 text-secondary-500 transition-all"
+				>
+					<iconify-icon icon={projectType.icon} />
+					{projectType.title}
+				</span>
+			{/if}
+		{/each}
+	</div>
 {/if}
 
 <section class="p-3 flex-auto h-full overflow-auto">
