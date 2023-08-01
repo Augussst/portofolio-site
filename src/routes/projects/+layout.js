@@ -12,11 +12,10 @@ export const load = async ({ params }) => {
 		for (const path in paths) {
 			const file = paths[path];
 			const slug = path.split('/').at(-1)?.replace('.md', '');
-			const content = file.default;
 
 			if (file && typeof file === 'object' && 'metadata' in file && slug) {
 				const metadata = file.metadata;
-				const project = { slug, ...metadata, content };
+				const project = { slug, ...metadata };
 				projects.push(project);
 			}
 		}
