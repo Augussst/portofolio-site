@@ -1,19 +1,44 @@
 <script>
 	import Iframe from '$lib/components/Iframe.svelte';
+	import { fly } from 'svelte/transition';
 
 	export let data;
 	$: ({ meta, content } = data);
 </script>
 
-<div class="pt-3 container mx-auto">
-	<h1 class="h1 flex items-center gap-2">{meta.title}</h1>
-	<Iframe
-		class="border rounded-xl overflow-clip"
-		width="max-w-4xl"
-		title={meta.title}
-		src="https://augussst.github.io/AS-LuasdanVolume-BangunRuang/"
-	/>
-	<div class="prose prose-invert text-token mx-auto max-w-4xl">
-		<svelte:component this={content} />
+{#key data.url}
+	<div
+		in:fly={{ x: -100, duration: 500, delay: 500 }}
+		out:fly={{ x: -100, duration: 500 }}
+		class="container flex flex-col gap-3 mx-auto max-w-4xl"
+	>
+		<h1 class="h1">{meta.title}</h1>
+		{#if meta.tools}
+			<ul class="flex gap-2">
+				{#each meta.tools as tag}
+					<li class="border rounded-xl px-2">{tag.tool}</li>
+				{/each}
+			</ul>
+		{/if}
+		{#if meta.url}
+			<Iframe
+				class="border rounded-xl overflow-clip"
+				width="max-w-4xl"
+				title="{meta.title} preview"
+				src={meta.url}
+			/>
+		{/if}
+		{#if meta.file}
+			<!-- svelte-ignore a11y-media-has-caption -->
+			<video class="border rounded-xl overflow-clip" controls>
+				<source src={meta.file} type="video/mp4" />
+				Your browser does not support the video tag.
+			</video>
+		{/if}
+		<div class="prose prose-invert text-token mx-auto max-w-4xl">
+			<svelte:component this={content} />
+		</div>
 	</div>
-</div>
+{/key}
+
+<!-- <pre>{JSON.stringify(meta, null, 2)}</pre> -->
