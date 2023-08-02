@@ -8,8 +8,8 @@
 
 {#key data.url}
 	<div
-		in:fly={{ x: -100, duration: 500, delay: 500 }}
-		out:fly={{ x: -100, duration: 500 }}
+		in:fly={{ x: -100, duration: 300, delay: 300 }}
+		out:fly={{ x: -100, duration: 300 }}
 		class="container flex flex-col gap-3 mx-auto max-w-4xl"
 	>
 		<h1 class="h1">{meta.title}</h1>

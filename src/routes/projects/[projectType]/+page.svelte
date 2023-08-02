@@ -9,7 +9,7 @@
 </script>
 
 {#key data.url}
-	<div in:fly={{ x: -100, duration: 500, delay: 500 }} out:fly={{ x: -100, duration: 500 }}>
+	<div in:fly={{ x: -100, duration: 300, delay: 300 }} out:fly={{ x: -100, duration: 300 }}>
 		{#each projectByTypes as type}
 			{#if type.slug == params.projectType}
 				<ProjectGrid typeTitle={type.title} typeIcon={type.icon}>

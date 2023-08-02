@@ -10,7 +10,7 @@
 </script>
 
 {#key data.url}
-	<div in:fly={{ x: -100, duration: 500, delay: 500 }} out:fly={{ x: -100, duration: 500 }}>
+	<div in:fly={{ x: -100, duration: 300, delay: 300 }} out:fly={{ x: -100, duration: 300 }}>
 		{#each projectByTypes as type, i}
 			<ProjectGrid
 				typeTitle={type.title}
