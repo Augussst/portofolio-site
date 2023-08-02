@@ -25,9 +25,9 @@
 </script>
 
 <div class="flex flex-col md:grid md:grid-cols-3 mx-auto md:px-5 gap-3 w-full h-full">
-	<section class="col-span-2 flex flex-col justify-center px-5 md:px-0">
+	<section class="col-span-2 flex flex-col justify-center px-5 max-md:pt-5 md:px-0">
 		<div class="max-w-4xl mx-auto flex flex-col items-center justify-center">
-			<div class="flex flex-col items-center justify-center mb-5">
+			<div class="flex gap-2 flex-col items-center justify-center mb-5">
 				<img
 					class="w-28 rotate-[-15deg] rounded-full grayscale"
 					src={about.metadata.picture}
