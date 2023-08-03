@@ -33,7 +33,7 @@
 			use:popup={projectTypePopup}
 		>
 			<span class="capitalize">{selectedType() || 'All'}</span>
-			<span>⏷</span>
+			<iconify-icon class="text-2xl" icon="gridicons:dropdown" />
 		</button>
 
 		<div
