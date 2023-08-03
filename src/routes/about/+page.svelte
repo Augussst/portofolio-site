@@ -89,7 +89,7 @@
 					<div>{status}</div>
 				</div>
 			</form>
-			<ul class="flex my-5 justify-center gap-5">
+			<ul id="social" class="flex my-5 justify-center gap-5">
 				{#each about.metadata.social as social}
 					<li>
 						<a
