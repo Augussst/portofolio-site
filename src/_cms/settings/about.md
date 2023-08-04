@@ -1,6 +1,23 @@
 ---
 name: Muhamad Oka Augusta
 picture: /images/uploads/profile.png
+skillCat:
+  - category: Front-end Development
+    skills:
+      - skill: HTML
+      - skill: CSS
+      - skill: Javascript
+      - skill: Svelte
+      - skill: Sveltekit
+      - skill: Tailwind CSS
+  - category: Instructional Design
+    skills:
+      - skill: Articulate Storyline
+      - skill: Moodle
+  - category: Motion Graphic
+    skills:
+      - skill: Adobe Illustrator
+      - skill: Adobe After Effects
 social:
   - icon: ic:round-email
     name: Email
@@ -18,8 +35,8 @@ social:
     link: https://github.com/Augussst
     icon: mdi:github
 ---
-Educational Technology student with a passion for creating engaging instructional media, developing beautiful and efficient website, and designing visually appealing motion graphics.
+Educational Technology student at Universitas Pendidikan Indonesia with a passion for developing beautiful and efficient website, creating engaging instructional media, and designing visually appealing motion graphics.
 
-As a student of Educational Technology at Universitas Pendidikan Indonesia, I am acquiring in-depth knowledge on designing and developing effective and interactive learning experiences.
+I have professionally worked on several instructional design projects, creating effective instructional videos for multiple clients. In addition, I gained valuable internship experience at Bank Syariah Indonesia, where I developed a full-stack web application to address a data management challenge at BSI Corporate University. 
 
-Combining my educational background and passion, I am equipped with a diverse skill set that allows me to effectively contribute to projects requiring multimedia design and development, web development, and motion graphics design.
+Moreover, during my time in university, I actively participated in Educational Technology student association as a member of the design team, creating captivating motion graphics that played a pivotal role in enhancing and supporting the success of the organiation events.

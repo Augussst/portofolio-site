@@ -24,10 +24,10 @@
 	};
 </script>
 
-<div class="flex flex-col md:grid md:grid-cols-3 mx-auto md:px-5 gap-3 w-full h-full">
-	<section class="col-span-2 flex flex-col justify-center px-5 max-md:pt-5 md:px-0">
-		<div class="max-w-4xl mx-auto flex flex-col items-center justify-center">
-			<div class="flex gap-2 flex-col items-center justify-center mb-5">
+<div class="flex flex-col lg:grid lg:grid-cols-3 mx-auto lg:px-5 gap-3 w-full h-full">
+	<section class="col-span-2 flex flex-col justify-center px-5 py-5 lg:px-0">
+		<div class="max-w-4xl mx-auto flex gap-3 flex-col items-center justify-center">
+			<div class="flex gap-2 flex-col items-center justify-center">
 				<img
 					class="w-28 rotate-[-15deg] rounded-full grayscale"
 					src={about.metadata.picture}
@@ -38,6 +38,23 @@
 			<div class="prose text-token mx-auto max-w-4xl">
 				<svelte:component this={about.default} />
 			</div>
+			<div class="mx-auto w-full max-w-4xl">
+				<h2 class="h2 mb-3">Skills</h2>
+				<div class="flex flex-wrap md:grid md:grid-cols-3 gap-5">
+					{#each about.metadata.skillCat as skillCat}
+						<div class="flex flex-col gap-1 w-full">
+							<h3 class="h3">{skillCat.category}</h3>
+							<ul class="flex h-fit flex-wrap gap-2">
+								{#each skillCat.skills as skills}
+									<li class="border h-fit w-fit rounded-xl px-2 whitespace-nowrap">
+										{skills.skill}
+									</li>
+								{/each}
+							</ul>
+						</div>
+					{/each}
+				</div>
+			</div>
 		</div>
 	</section>
 
@@ -45,7 +62,7 @@
 		class="border-t md:border-l flex w-full items-center h-full pt-5 md:pl-5 col-span-1 px-5 md:px-0"
 	>
 		<div class="w-full">
-			<h1 class="h1 mb-5">Contact Me</h1>
+			<h2 class="h2 mb-5">Contact Me</h2>
 			<form on:submit|preventDefault={handleSubmit} class="flex flex-col gap-3">
 				<input type="hidden" name="access_key" value="d2ff10cc-2c29-4b22-8843-75a0a6a3fbd9" />
 				<input type="hidden" name="subject" value="New message from okreate website" />
