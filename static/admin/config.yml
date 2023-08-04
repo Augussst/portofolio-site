@@ -1,3 +1,5 @@
+# local_backend: true
+
 backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
@@ -35,6 +37,13 @@ collections:
         search_fields: ['projectTypes.*.title']
         display_fields: ['projectTypes.*.title']
         value_field: 'projectTypes.*.slug'
+      - label: 'Tools'
+        name: 'tools'
+        widget: 'list'
+        allow_add: true
+        summary: '{{fields.tool}}'
+        fields:
+          - { label: 'Tool', name: 'tool', widget: 'string', required: false }
       - { label: 'Thumbnail', name: 'thumbnail', widget: 'image', required: false }
       - label: 'Project Images'
         name: 'projectImages'
@@ -97,3 +106,31 @@ collections:
           - { label: Name, name: name, widget: string }
           - { label: 'Author Picture', name: 'picture', widget: 'image' }
           - { label: 'Description', name: 'body', widget: 'markdown' }
+          - label: 'Skill Category'
+            name: 'skillCat'
+            widget: 'list'
+            allow_add: true
+            summary: '{{fields.category}}'
+            fields:
+              - { label: 'Category', name: 'category', widget: 'string' }
+              - label: 'Skills'
+                name: 'skills'
+                widget: 'list'
+                allow_add: true
+                summary: '{{fields.skill}}'
+                fields:
+                  - { label: 'skill', name: 'skill', widget: 'string' }
+          - label: 'Social'
+            name: 'social'
+            widget: 'list'
+            allow_add: true
+            summary: '{{fields.name}} ({{fields.link}})'
+            fields:
+              - {
+                  label: 'Icon',
+                  name: 'icon',
+                  widget: 'string',
+                  hint: 'get the icon name from **[Iconify](https://icon-sets.iconify.design)**'
+                }
+              - { label: 'Name', name: 'name', widget: 'string' }
+              - { label: 'Link', name: 'link', widget: 'string' }
