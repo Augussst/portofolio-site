@@ -27,8 +27,14 @@ collections:
       preview: false
     create: true
     slug: '{{title}}'
+    sortable_fields: ['commit_date', 'title']
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
+      - {
+          label: 'Title',
+          name: 'title',
+          widget: 'string',
+          pattern: ['^.{0,40}$', 'Title must be less than 40 characters']
+        }
       - label: 'Project Type'
         name: 'projectType'
         widget: 'relation'
