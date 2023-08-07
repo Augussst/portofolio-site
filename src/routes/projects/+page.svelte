@@ -17,6 +17,17 @@
 				typeIcon={type.icon}
 				class={lastItem(projectByTypes, i) ? '' : 'mb-3'}
 			>
+				{#if type.projects.length == 0}
+					<ProjectItem
+						click={() => {
+							scrollToTop();
+						}}
+						projectTitle="Coming Soon"
+						href="#"
+						projectThumbnail={undefined}
+						thumbnailFallback={site.siteLogo}
+					/>
+				{/if}
 				{#each type.projects as project}
 					<ProjectItem
 						click={() => {
