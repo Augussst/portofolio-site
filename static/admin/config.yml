@@ -33,7 +33,7 @@ collections:
           label: 'Title',
           name: 'title',
           widget: 'string',
-          pattern: ['^.{0,40}$', 'Title must be less than 40 characters']
+          pattern: ['^.{0,37}$', 'Title must be less than 37 characters']
         }
       - label: 'Project Type'
         name: 'projectType'
