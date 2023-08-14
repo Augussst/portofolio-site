@@ -6,7 +6,7 @@
 	import { fly, slide } from 'svelte/transition';
 </script>
 
-<section
+<div
 	class="flex grow border rounded-xl transition-all duration-500
 			{trigger == href.split('/')[1] ? 'h-full' : 'h-14'}"
 >
@@ -48,7 +48,4 @@
 			</div>
 		{/if}
 	</div>
-</section>
-
-<style lang="postcss">
-</style>
+</div>

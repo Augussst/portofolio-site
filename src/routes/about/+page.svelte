@@ -24,7 +24,7 @@
 	};
 </script>
 
-<div class="flex flex-col lg:grid lg:grid-cols-3 mx-auto lg:px-5 gap-3 w-full h-full">
+<main class="flex flex-col lg:grid lg:grid-cols-3 mx-auto lg:px-5 gap-3 w-full h-full">
 	<section class="col-span-2 flex flex-col justify-center px-5 py-5 lg:px-0">
 		<div class="max-w-4xl mx-auto flex gap-3 flex-col items-center justify-center">
 			<div class="flex gap-2 flex-col items-center justify-center">
@@ -121,4 +121,4 @@
 			</ul>
 		</div>
 	</section>
-</div>
+</main>

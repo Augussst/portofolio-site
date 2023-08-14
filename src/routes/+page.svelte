@@ -6,7 +6,7 @@
 </script>
 
 <div class="flex justify-center overflow-x-hidden px-5 w-full h-full">
-	<div class="relative grid grid-flow-col gap-5 items-center justify-center my-auto">
+	<main class="relative grid grid-flow-col gap-5 items-center justify-center my-auto">
 		<div
 			class="flex md:gap-2 flex-col items-center justify-center
 					md:border p-3 rounded-xl md:h-full max-md:absolute max-md:mb-10 bottom-full right-0 left-0
@@ -61,5 +61,5 @@
 				</a>
 			</span>
 		</div>
-	</div>
+	</main>
 </div>

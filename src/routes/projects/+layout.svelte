@@ -1,8 +1,8 @@
 <script context="module">
-	export let section;
+	export let main;
 
 	export function scrollToTop() {
-		section.scrollTo({ top: 0, behavior: 'smooth' });
+		main.scrollTo({ top: 0, behavior: 'smooth' });
 	}
 </script>
 
@@ -104,6 +104,6 @@
 	</div>
 {/if}
 
-<section bind:this={section} class="p-3 flex-auto h-full overflow-auto">
+<main bind:this={main} class="p-3 flex-auto h-full overflow-auto">
 	<slot />
-</section>
+</main>
