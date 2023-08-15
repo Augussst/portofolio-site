@@ -9,6 +9,8 @@
 	import '@fontsource/staatliches';
 	import '@fontsource/ubuntu';
 
+	import Analytics from '$lib/Analytics.svelte';
+
 	import PageSection from '$lib/components/PageSection.svelte';
 	import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
@@ -17,6 +19,8 @@
 	export let data;
 	$: ({ site, sitePage, url } = data);
 </script>
+
+<Analytics />
 
 <svelte:head>
 	<title>{site.siteName}</title>
