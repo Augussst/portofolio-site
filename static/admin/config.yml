@@ -28,6 +28,10 @@ collections:
     create: true
     slug: '{{title}}'
     sortable_fields: ['commit_date', 'title']
+    summary: '({{projectType}}) {{title}}'
+    view_groups:
+      - label: Type
+        field: projectType
     fields:
       - {
           label: 'Title',
@@ -60,6 +64,8 @@ collections:
           - { label: 'Project Picture', name: 'picture', widget: 'image', required: false }
       - { label: 'Project file', name: 'file', widget: 'file', required: false }
       - { label: 'Project Url (Embeds)', name: 'url', widget: 'string', required: false }
+      - { label: 'Web Source Code', name: 'sourceCode', widget: 'string', required: false }
+      - { label: 'Web Live Demo', name: 'liveDemo', widget: 'string', required: false }
       - { label: 'Description', name: 'body', widget: 'markdown' }
   - name: 'settings'
     label: 'Settings'
