@@ -28,7 +28,7 @@
 	<script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
 </svelte:head>
 
-<div class="flex max-lg:flex-col h-[100dvh] w-screen p-3 overflow-hidden">
+<div class="flex max-lg:flex-col h-screen w-screen p-3 overflow-hidden">
 	{#if sitePage.includes(url.split('/')[1])}
 		<div class="flex flex-col gap-3 h-full w-full">
 			{#each site.page as page}
