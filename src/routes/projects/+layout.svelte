@@ -104,6 +104,6 @@
 	</div>
 {/if}
 
-<main bind:this={main} class="p-3 flex-auto h-full overflow-auto">
+<main bind:this={main} class="p-3 flex-auto h-full overflow-y-auto overflow-x-hidden">
 	<slot />
 </main>
