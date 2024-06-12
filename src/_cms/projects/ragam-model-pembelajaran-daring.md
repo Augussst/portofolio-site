@@ -1,6 +1,6 @@
 ---
 title: Ragam Model Pembelajaran Daring
-projectType: instructional-design
+projectType: vid-edit
 tools:
   - tool: Adobe Premiere Pro
   - tool: Adobe After Effects
