@@ -1,6 +1,6 @@
 ---
 title: EdTech 2020 Twibbon Video
-projectType: mograph
+projectType: other
 tools:
   - tool: Adobe After Effects
   - tool: Adobe Illustrator

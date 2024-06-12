@@ -1,6 +1,6 @@
 ---
 title: P2M Logo Animation
-projectType: mograph
+projectType: other
 tools:
   - tool: Adobe After Effects
 thumbnail: /images/uploads/p2manim.gif

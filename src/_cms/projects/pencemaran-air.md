@@ -1,6 +1,6 @@
 ---
 title: Pencemaran Air
-projectType: instructional-design
+projectType: other
 tools:
   - tool: Articulate Storyline
   - tool: Adobe Illustrator

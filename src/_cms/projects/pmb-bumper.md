@@ -1,6 +1,6 @@
 ---
 title: PMB Bumper
-projectType: mograph
+projectType: other
 tools:
   - tool: Adobe Illustrator
   - tool: Adobe After Effects
