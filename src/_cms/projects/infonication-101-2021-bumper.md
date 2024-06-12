@@ -1,6 +1,6 @@
 ---
 title: Infonication 101 2021 Bumper
-projectType: mograph
+projectType: other
 tools:
   - tool: Adobe After Effects
   - tool: Adobe Illustrator
