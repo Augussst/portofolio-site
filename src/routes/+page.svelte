@@ -40,13 +40,10 @@
 				<li class="flex items-center gap-2">
 					<iconify-icon
 						icon="streamline:programming-browser-code-2-code-browser-tags-angle-programming-bracket"
-					/> Front-end Developer
+					/> Web Developer
 				</li>
 				<li class="flex items-center gap-2">
-					<iconify-icon icon="fluent-mdl2:learning-tools" /> Instructional Designer
-				</li>
-				<li class="flex items-center gap-2">
-					<iconify-icon icon="material-symbols:animation" /> Motion Graphic Designer
+					<iconify-icon icon="dashicons:editor-video" /> Video Editor
 				</li>
 			</ul>
 			<span class="flex gap-3">
