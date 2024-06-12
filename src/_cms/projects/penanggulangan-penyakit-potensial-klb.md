@@ -1,6 +1,6 @@
 ---
 title: Penanggulangan Penyakit Potensial KLB
-projectType: instructional-design
+projectType: vid-edit
 thumbnail: /images/uploads/tgcklb-min.gif
 projectImages: []
 file: /images/uploads/penaggulangan-penyakit-potensial-klb-dan-wabah.mp4
