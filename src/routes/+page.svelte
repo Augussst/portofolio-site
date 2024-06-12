@@ -32,17 +32,17 @@
 				home of everything I kreated
 			</span>
 		</div>
-		<div class="">
+		<div class="h-full flex flex-col justify-between">
 			<span class="text-lg sm:text-xl">Hi, I'm {about_metadata.name}</span>
 			<ul
 				class="flex flex-col gap-2 my-2 md:my-3 text-2xl sm:text-4xl lg:text-5xl whitespace-nowrap"
 			>
-				<li class="flex items-center gap-2">
+				<li class="flex items-center gap-3">
 					<iconify-icon
 						icon="streamline:programming-browser-code-2-code-browser-tags-angle-programming-bracket"
 					/> Web Developer
 				</li>
-				<li class="flex items-center gap-2">
+				<li class="flex items-center gap-3">
 					<iconify-icon icon="dashicons:editor-video" /> Video Editor
 				</li>
 			</ul>
