@@ -1,6 +1,6 @@
 ---
 title: Rantai Penularan Infeksi
-projectType: instructional-design
+projectType: vid-edit
 tools:
   - tool: Adobe After Effects
   - tool: Adobe Illustrator
