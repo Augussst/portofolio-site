@@ -1,12 +1,12 @@
 ---
 projectTypes:
-  - title: Front-end Development
-    slug: front-end-dev
+  - title: Web Development
+    slug: web-dev
     icon: streamline:programming-browser-code-2-code-browser-tags-angle-programming-bracket
-  - title: Instructional Design
-    slug: instructional-design
-    icon: fluent-mdl2:learning-tools
-  - title: Motion Graphics
-    slug: mograph
-    icon: material-symbols:animation
+  - title: Video Editing
+    slug: vid-edit
+    icon: arcticons:open-video-editor
+  - title: Other
+    slug: other
+    icon: octicon:project-roadmap-16
 ---
