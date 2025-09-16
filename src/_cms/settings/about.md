@@ -35,9 +35,4 @@ social:
     link: https://github.com/Augussst
     icon: mdi:github
 ---
-
-Educational Technology student at Universitas Pendidikan Indonesia with a passion for developing beautiful and efficient website, creating engaging instructional media, and designing visually appealing motion graphics.
-
-I have professionally worked on several instructional design projects, creating effective instructional videos for multiple clients. In addition, I gained valuable internship experience at Bank Syariah Indonesia, where I developed a full-stack web application to address a data management challenge at BSI Corporate University.
-
-Moreover, during my time in university, I actively participated in Educational Technology student association as a member of the design team, creating captivating motion graphics that played a pivotal role in enhancing and supporting the success of the organiation events.
+Educational Technology graduate specializing in media development with a GPA of 3.71. Experienced in freelance projects and internships spanning web development (WordPress, Moodle), video editing, and digital learning solutions for universities, government institutions, and corporate training. Certified in instructional media development, digital literacy, and English proficiency, with proven skills in platform deployment, multimedia production, and collaborative project execution.
