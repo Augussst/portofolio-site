@@ -25,9 +25,6 @@ social:
   - icon: ic:baseline-whatsapp
     name: Whatsapp
     link: https://wa.me/+6282321920737
-  - icon: mdi:instagram
-    name: Instagram
-    link: https://www.instagram.com/oka.augusta/
   - icon: mdi:linkedin
     name: Linkedin
     link: https://www.linkedin.com/in/okaaugust/
