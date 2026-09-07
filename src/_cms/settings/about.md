@@ -2,22 +2,25 @@
 name: Muhamad Oka Augusta
 picture: /images/uploads/profile.png
 skillCat:
-  - category: Web Development
+  - category: Learning & Tech
     skills:
-      - skill: HTML & CSS
-      - skill: Javascript
-      - skill: Svelte & Sveltekit
-      - skill: Tailwind CSS
-      - skill: WordPress
+      - skill: Articulate Storyline
+      - skill: Custom SCORM
       - skill: Moodle
-  - category: Video Editing
+      - skill: H5P
+      - skill: n8n Automation
+      - skill: AI-Assisted Development
+  - category: Media & Tools
     skills:
+      - skill: Google Workspace
       - skill: Adobe Premiere Pro
       - skill: Adobe After Effects
+      - skill: Adobe Illustrator
+      - skill: Adobe Photoshop
+      - skill: OBS Studio
   - category: Other
     skills:
-      - skill: Adobe Illustrator
-      - skill: Articulate Storyline
+      - skill: English (C2 Proficient EFSET, 583 PTESOL)
 social:
   - icon: ic:round-email
     name: Email
