@@ -39,11 +39,8 @@
 			>
 				<li class="flex items-center gap-3">
 					<iconify-icon
-						icon="streamline:programming-browser-code-2-code-browser-tags-angle-programming-bracket"
-					/> Web Developer
-				</li>
-				<li class="flex items-center gap-3">
-					<iconify-icon icon="dashicons:editor-video" /> Video Editor
+						icon="hugeicons:ai-learning"
+					/> Digital Learning Specialist
 				</li>
 			</ul>
 			<span class="flex gap-3">
