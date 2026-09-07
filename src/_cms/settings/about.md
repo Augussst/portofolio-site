@@ -32,4 +32,4 @@ social:
     link: https://github.com/Augussst
     icon: mdi:github
 ---
-Educational Technology graduate specializing in media development with a GPA of 3.71. Experienced in freelance projects and internships spanning web development (WordPress, Moodle), video editing, and digital learning solutions for universities, government institutions, and corporate training. Certified in instructional media development, digital literacy, and English proficiency, with proven skills in platform deployment, multimedia production, and collaborative project execution.
+Digital learning professional with hands-on experience in designing and developing end-to-end digital learning solutions. Skilled in instructional media development, AI-assisted custom SCORM development, LMS architecture (Moodle, WordPress), and system automation (n8n). Passionate about delivering engaging digital learning experience, while streamlining backend LMS administration to create a seamless training ecosystem.
