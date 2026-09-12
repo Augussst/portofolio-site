@@ -20,34 +20,42 @@
 		placement: 'bottom-start'
 	};
 
-	$: selectedType = () => {
-		const selected = projectTypes.filter((type) => type.slug === params.projectType);
-		return selected[0]?.title;
-	};
+	// Mengambil langsung objek yang cocok
+	$: currentProject = projectTypes?.find((type) => type.slug === params.projectType);
 </script>
 
 {#if params?.project == undefined}
 	<div class="border-b px-3 py-2">
 		<button
-			class="md:hidden btn justify-between w-56 px-2 py-1 rounded-xl border"
+			class="md:hidden flex justify-between w-80 px-2 py-1 rounded-xl border"
 			use:popup={projectTypePopup}
 		>
-			<span class="capitalize">{selectedType() || 'All'}</span>
+			<span class="capitalize flex items-center">
+				{#if currentProject?.icon}
+					<iconify-icon class="text-2xl pr-2" icon={currentProject.icon} />
+				{:else}
+					<iconify-icon class="text-2xl pr-2" icon="ic:round-select-all" />
+				{/if}
+				{currentProject?.title || 'All'}
+			</span>
 			<iconify-icon class="text-2xl" icon="gridicons:dropdown" />
 		</button>
 
 		<div
-			class="bg-secondary-500 shadow-lg py-2 border rounded-xl relative z-50"
+			class="bg-secondary-500 shadow-lg py-2 border rounded-xl relative z-50 w-80"
 			data-popup="projectTypePopup"
 		>
 			<nav class="list-nav">
 				<ul class="p-1">
 					<li class="{activeClass(undefined)} rounded-xl">
-						<a href="/projects">All</a>
+						<a href="/projects"
+							><iconify-icon class="text-2xl pr-2" icon="ic:round-select-all" /> All</a
+						>
 					</li>
 					{#each projectTypes as projectType}
 						<li class="{activeClass(projectType.slug)} rounded-xl">
 							<a href="/projects/{projectType.slug}">
+								<iconify-icon class="text-2xl pr-2" icon={projectType.icon} />
 								{projectType.title}
 							</a>
 						</li>
