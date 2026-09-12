@@ -1,6 +1,6 @@
 ---
 title: Pelatihan Profesi
-projectType: web-dev
+projectType: digi-learn
 tools:
   - tool: Moodle
 thumbnail: /images/uploads/pelatihan-profesi.gif
