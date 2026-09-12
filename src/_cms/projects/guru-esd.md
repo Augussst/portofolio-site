@@ -1,6 +1,6 @@
 ---
 title: Guru ESD
-projectType: web-dev
+projectType: digi-learn
 tools:
   - tool: WordPress
   - tool: Moodle
