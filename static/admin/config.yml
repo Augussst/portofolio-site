@@ -47,6 +47,14 @@ collections:
         search_fields: ['projectTypes.*.title']
         display_fields: ['projectTypes.*.title']
         value_field: 'projectTypes.*.slug'
+      - label: 'Roles'
+        name: 'roles'
+        widget: 'list'
+        allow_add: true
+        summary: '{{fields.role}}'
+        hint: 'Video Editing, Animation, Instructional Design, Storyboarding, Content Development, LMS Administration, etc. Kalo rolenya lebih dari satu, sebutin semua.'
+        fields:
+          - { label: 'Role', name: 'role', widget: 'string', required: false }
       - label: 'Tools'
         name: 'tools'
         widget: 'list'
