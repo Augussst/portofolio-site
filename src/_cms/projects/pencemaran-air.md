@@ -5,6 +5,8 @@ tools:
   - tool: Articulate Storyline
   - tool: Adobe Illustrator
 thumbnail: /images/uploads/pencemaranair.gif
+projectImages:
+  - picture: /images/uploads/pencemaranair.gif
 url: https://augussst.github.io/AS-PencemaranAir/
 ---
 Pencemaran Air is an interactive multimedia for learning that aims to help grade 7 junior high school students understand the concept of environmental pollution, especially water pollution in an interactive and interesting way.
