@@ -1,6 +1,10 @@
 ---
 title: Pencemaran Air
 projectType: learn-media
+roles:
+  - role: Instructional Design
+  - role: Storyboarding
+  - role: Content Development
 tools:
   - tool: Articulate Storyline
   - tool: Adobe Illustrator
@@ -9,6 +13,6 @@ projectImages:
   - picture: /images/uploads/pencemaranair.gif
 url: https://augussst.github.io/AS-PencemaranAir/
 ---
-Pencemaran Air is an interactive multimedia for learning that aims to help grade 7 junior high school students understand the concept of environmental pollution, especially water pollution in an interactive and interesting way.
-
-This interactive multimedia is designed based on the Science textbook published by the Ministry of Education, Culture, Research and Technology in Indonesian language so that it can be understood by students in Indonesia, so that it is easier to understand and in accordance with the applicable curriculum in Indonesia.
+* Curriculum-Aligned Content: Translated formal government science textbook materials (Ministry of Education) into an accessible, engaging digital format specifically tailored for 7th-grade students.
+* Asset Curation & Modification: Sourced, edited, and adapted existing vector illustrations using Adobe Illustrator to create a cohesive, age-appropriate visual aesthetic for the target demographic.
+* Mastery-Based Branching: Engineered a conditional progression loop (Mastery Learning). Learners must pass section checkpoints to advance; failing triggers an automatic remedial loop back to the preceding material to ensure full comprehension.
