@@ -36,36 +36,10 @@
 	<div
 		in:fly={{ x: -100, duration: 300, delay: 300 }}
 		out:fly={{ x: -100, duration: 300 }}
-		class="container flex flex-col gap-x-5 gap-y-3 mx-auto"
+		class="container flex flex-col gap-x-5 gap-y-3 mx-auto my-0 lg:my-5"
 	>
 		<div class="flex max-sm:flex-col flex-wrap gap-3 justify-between sm:items-center">
 			<h1 class="h1">{meta.title}</h1>
-			{#if meta.tools}
-				<div class="flex flex-row gap-2">
-					<span class="flex items-center gap-1 max-sm:text-sm">
-						<iconify-icon class="text-2xl" icon="fluent:window-dev-tools-16-regular" />
-						Tools:
-					</span>
-					<ul class="flex flex-wrap gap-2 h-fit">
-						{#each meta.tools as tag}
-							<li class="border rounded-xl px-2 max-sm:text-sm">{tag.tool}</li>
-						{/each}
-					</ul>
-				</div>
-			{/if}
-			{#if meta.roles}
-				<div class="flex flex-row gap-2">
-					<span class="flex items-center gap-1 max-sm:text-sm">
-						<iconify-icon class="text-2xl" icon="carbon:user-role" />
-						Roles:
-					</span>
-					<ul class="flex flex-wrap gap-2 h-fit">
-						{#each meta.roles as tag}
-							<li class="border rounded-xl px-2 max-sm:text-sm">{tag.role}</li>
-						{/each}
-					</ul>
-				</div>
-			{/if}
 		</div>
 		<div class="grid lg:grid-cols-2 gap-3">
 			<div class="w-full">
@@ -274,8 +248,39 @@
 					</div>
 				{/if}
 			</div>
-			<div class="prose prose-invert text-token max-w-4xl">
-				<svelte:component this={content} />
+			<div class="flex flex-col gap-3">
+				<div class="border-none h-0.5 bg-white lg:hidden" />
+				{#if meta.tools}
+					<div class="flex flex-row gap-2 ml-1">
+						<span class="flex items-center gap-1 max-sm:text-sm">
+							<iconify-icon class="text-2xl" icon="fluent:window-dev-tools-16-regular" />
+							Tools:
+						</span>
+						<ul class="flex flex-wrap gap-2 h-fit">
+							{#each meta.tools as tag}
+								<li class="border rounded-xl px-2 max-sm:text-sm">{tag.tool}</li>
+							{/each}
+						</ul>
+					</div>
+				{/if}
+				{#if meta.roles}
+					<div class="flex flex-row gap-2 ml-1">
+						<span class="flex items-center gap-1 max-sm:text-sm">
+							<iconify-icon class="text-2xl" icon="carbon:user-role" />
+							Roles:
+						</span>
+						<ul class="flex flex-wrap gap-2 h-fit">
+							{#each meta.roles as tag}
+								<li class="border rounded-xl px-2 max-sm:text-sm bg-white text-black">
+									{tag.role}
+								</li>
+							{/each}
+						</ul>
+					</div>
+				{/if}
+				<div class="prose prose-invert text-token max-w-4xl">
+					<svelte:component this={content} />
+				</div>
 			</div>
 		</div>
 	</div>
