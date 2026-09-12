@@ -1,6 +1,6 @@
 ---
 title: Age Calculator App
-projectType: web-dev
+projectType: other
 tools:
   - tool: Sveltekit
 thumbnail: /images/uploads/age-calculator.png
