@@ -1,6 +1,6 @@
 ---
 title: Luas dan Volume Bangun Ruang
-projectType: other
+projectType: learn-media
 tools:
   - tool: Articulate Storyline
   - tool: Adobe Illustrator
