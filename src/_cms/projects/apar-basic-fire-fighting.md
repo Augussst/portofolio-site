@@ -19,4 +19,4 @@ liveDemo: ""
 * Mobile-First Architecture: Designed in a portrait orientation specifically tailored for frontline workers who primarily access training via smartphones.
 * Engagement-Driven Navigation: Implemented a no-scroll, forced-interaction mechanism requiring users to interact with specific slide elements before advancing, ensuring maximum focus.
 * Interactive Assessments: Drag-and-drop knowledge checks and conditional mid-video quizzes, where incorrect answers automatically rewind the video to reinforce comprehension before allowing the user to proceed.
-* Scalable Rapid Production: Engineered this layout as a standardized template for PT Roda Urban Nusantara (Urbanica) to match frontline learner behavior while enabling rapid, scalable mass-production for future content.
+* Scalable Rapid Production: Engineered this layout as a standardized template for PT Roda Urban Nusantara (Urbanica), enabling the rapid mass-production of multiple operational modules (including APAR, HACCP, and other compliance trainings) while maintaining consistent frontline learner engagement.
