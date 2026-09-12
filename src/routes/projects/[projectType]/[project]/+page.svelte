@@ -1,11 +1,45 @@
 <script>
 	import Iframe from '$lib/components/Iframe.svelte';
 	import { fly } from 'svelte/transition';
+	import { onMount } from 'svelte';
 
 	export let data;
 	$: ({ meta, content } = data);
 
 	let activeMediaTab = 'images'; // 'images' | 'embed'
+
+	// Cek hash di URL saat pertama kali halaman dibuka / hash berubah
+	function syncTabWithHash() {
+		if (typeof window === 'undefined') return;
+		if (window.location.hash === '#demo') {
+			activeMediaTab = 'embed';
+		} else {
+			activeMediaTab = 'images';
+		}
+	}
+
+	// Ganti tab sekaligus update hash di browser URL
+	function switchTab(tab) {
+		activeMediaTab = tab;
+		if (typeof window !== 'undefined') {
+			const newHash = tab === 'embed' ? '#demo' : '';
+			const newUrl = newHash ? newHash : window.location.pathname + window.location.search;
+
+			// replaceState agar URL berubah tanpa memicu scroll jump atau menumpuk riwayat browser
+			history.replaceState(null, '', newUrl);
+		}
+	}
+
+	onMount(() => {
+		syncTabWithHash();
+		window.addEventListener('hashchange', syncTabWithHash);
+		return () => window.removeEventListener('hashchange', syncTabWithHash);
+	});
+
+	// Jalankan ulang jika data URL project berganti
+	$: if (data) {
+		syncTabWithHash();
+	}
 
 	// Carousel
 
@@ -43,7 +77,7 @@
 		</div>
 		<div class="grid lg:grid-cols-2 gap-3">
 			<div class="w-full">
-				<!-- Tab selector (Lebar tombol identik 50/50 & rata dengan kartu di bawahnya) -->
+				<!-- Tab selector -->
 				{#if meta.projectImages?.length > 0 && meta.url}
 					<div class="flex w-full gap-2 px-4">
 						<button
@@ -52,7 +86,7 @@
 							'images'
 								? 'variant-filled-primary'
 								: ''}"
-							on:click={() => (activeMediaTab = 'images')}
+							on:click={() => switchTab('images')}
 						>
 							<iconify-icon icon="fluent:image-multiple-24-regular" class="text-lg" />
 							Preview
@@ -63,7 +97,7 @@
 							'embed'
 								? 'variant-filled-primary'
 								: ''}"
-							on:click={() => (activeMediaTab = 'embed')}
+							on:click={() => switchTab('embed')}
 						>
 							<iconify-icon icon="fluent:window-play-20-regular" class="text-lg" />
 							Live Demo
