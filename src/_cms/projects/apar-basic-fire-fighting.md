@@ -14,7 +14,7 @@ projectImages:
   - picture: /images/uploads/apar.gif
 url: https://augussst.github.io/storyline-apar/
 sourceCode: ""
-liveDemo: https://augussst.github.io/storyline-apar/
+liveDemo: ""
 ---
 * Mobile-First Architecture: Designed in a portrait orientation specifically tailored for frontline workers who primarily access training via smartphones.
 * Engagement-Driven Navigation: Implemented a no-scroll, forced-interaction mechanism requiring users to interact with specific slide elements before advancing, ensuring maximum focus.
